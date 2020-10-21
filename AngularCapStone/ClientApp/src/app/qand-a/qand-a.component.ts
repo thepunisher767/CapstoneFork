@@ -17,6 +17,12 @@ export class QandAComponent {
   qandalist: QandA;
   newFav: Favorites;
 
+  newQandA: QandA = {    
+    question: '',
+    answer: ''
+  }
+
+
   ngOnInit(): void {
     this.dal.getAllQandA().subscribe(
       (data: QandA) =>
@@ -29,6 +35,16 @@ export class QandAComponent {
     this.newFav = { qID: id, userID: this.dal.userID }
     //console.log(this.newFav);
     this.dal.sendToFavs(this.newFav);
+  }
+
+  addQandA() {
+    //this.newQandA = { question: newQuestion, answer: newAnswer }
+    //this.newQandA = { question: 'How to?', answer: 'Figure it out' }
+    this.dal.sendToQandA(this.newQandA);
+    this.ngOnInit();
+    this.newQandA.question=''
+    this.newQandA.answer = ''
+    window.location.reload();
   }
 
 }

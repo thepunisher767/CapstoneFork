@@ -21,6 +21,14 @@ export class DALService {
     return this.http.get(this.QandAUrl);
   }
 
+  sendToQandA(newQandA: QandA) {
+    const headers = { 'content-type': 'application/json' };
+    const body = JSON.stringify(newQandA);
+    var newURL = this.QandAUrl + '/addQandA'
+    console.log(body)
+    return this.http.post<QandA>(newURL, body, { 'headers': headers }).subscribe((data) => console.log(data));
+  }
+
   sendToFavs(newFav: Favorites) {
     const headers = { 'content-type': 'application/json' };
     const body = JSON.stringify(newFav);

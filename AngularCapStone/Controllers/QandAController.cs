@@ -19,11 +19,11 @@ namespace AngularCapStone.Controllers
             this.dal = dal;
         }
         
-        [HttpGet("addQandA")]
-        public void addQandA()
+        [HttpPost("addQandA")]
+        public void addQandA([FromBody] QandA newQandA)
         {
-            QandA test = new QandA() { Answer = "The Answer", Question = "The Question" };
-            dal.AddQandA(test);            
+            //QandA test = new QandA() { Answer = "The Answer", Question = "The Question" };
+            dal.AddQandA(newQandA);            
         }
 
         [HttpGet]
@@ -32,6 +32,5 @@ namespace AngularCapStone.Controllers
             return dal.GetQandA();
         }
 
-        
     }
 }

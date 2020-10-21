@@ -1,5 +1,5 @@
 export interface QandA {
-  id: number;
+  id?: number;
   question: string;
   answer: string;
 }

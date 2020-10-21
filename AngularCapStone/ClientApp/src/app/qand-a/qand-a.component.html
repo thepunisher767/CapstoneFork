@@ -1,12 +1,20 @@
-<div style="border: 1px solid red">QandA Component</div>
+<div class="title">QandA</div>
 <br />
 
 <ng-container *ngFor="let item of qandalist, index as i">
   <input type="checkbox" id="item{{i}}" />
-  <label for="item{{i}}">{{item.id}}. {{item.question}}</label>
+  <label for="item{{i}}">{{item.question}}</label>
   <div class="content">
-    <p>{{item.id}}. {{item.answer}}</p>
+    <p>{{item.answer}}</p>
       <br />
         <button (click)="addToFavs(item.id)">Add to Favs</button>
   </div>
 </ng-container>
+<br/>
+<input type="text" placeholder="New Question" name="newQuestion" id="newQuestion"/> <br/>
+<form>
+  <textarea name="newQuestion" placeholder="New Question" rows="1" cols="50" [(ngModel)]="newQandA.question"></textarea> <br/>
+  <textarea name="newAnswer" placeholder="New Answer..." rows="5" cols="50" [(ngModel)]="newQandA.answer"></textarea> <br/>
+  <button (click)="addQandA()">Add to QandA</button>
+</form>
+

@@ -29,6 +29,7 @@ export class FavoritesComponent {
     //console.log(this.newFav);
     this.dal.delFromFavs(this.delFav);
     this.ngOnInit();
+    window.location.reload();
     /*this.dal.getAllFavs().subscribe(
       (data: Favorites) =>
         this.favlist = data

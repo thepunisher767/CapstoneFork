@@ -32,3 +32,10 @@ input + label + .content {
 input:checked + label + .content {
   display: block;
 }
+
+.title {
+  border: 3px solid forestgreen;
+  font-size:x-large;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align:center
+}
